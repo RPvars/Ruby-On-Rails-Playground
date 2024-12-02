@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# DEKORĀTORS
+    Dekorātors atbild par izvades datu noformēšanu/dekorēšanu lai tas nebūtu jādara kontrolierī vai modelī, šeit ir citas atbildības.
+    Dekorātors nodrošina DRY, sadala kodu pa atbildībām
 
-Things you may want to cover:
+    Piemērs:
+        def full_name
+            name + ' ' + surname
+        end
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
