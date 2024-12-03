@@ -1,4 +1,14 @@
-<%= form_with(model: user) do |form| %>
+<%= form_with(model: form, url: users_path) do |form| %>
+  <% if form.object.errors.any? %>
+    <div>
+      <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% form.object.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>

@@ -9,12 +9,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @form = Users::Form.new
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
+    @form = Users::Form.new(user_params)
+    if @form.save
       redirect_to users_path
     else
       render :new
@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :surname, :email, :phone, :country, :city, :street)
+    params.require(:users_form).permit(:name, :surname, :email, :phone, :country, :city, :street)
   end
 end
