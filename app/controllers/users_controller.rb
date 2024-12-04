@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @decorated_user = UserDecorator.new(@user)
+    @presented_user = UserPresenter.new(@user)
   end
 
   def new

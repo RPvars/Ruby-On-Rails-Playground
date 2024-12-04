@@ -1,8 +1,16 @@
 <div>
   <h1>User Details</h1>
   <p><strong>Full name:</strong> <%= @decorated_user.full_name %></p>
+  <p><strong>Full name:</strong> <%= @presented_user.full_name %></p>
+  <p><strong>Decorator Name:</strong> <%= @decorated_user.name %></p>
+
+  <%# !!!Šis nedarbosies jo Presenter neļauj piekļūt base objeka metodēm %>
+  <%#       @presented_user.name      %>
+
   <p><strong>Email:</strong> <%= @user.email %></p>
   <p><strong>Address:</strong> <%= @user.city %>, <%= @user.street %></p>
   <p><strong>Phone:</strong> <%= @user.phone %></p>
+  <p><strong>Qualifications:</strong> <%= @presented_user.aquried_qualifications %></p>
+
 </div>
 <%= link_to "Back to users", users_path %>
