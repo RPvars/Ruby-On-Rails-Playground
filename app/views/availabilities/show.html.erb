@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @availability.user_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @availability.date %>
+</p>
+
+<p>
+  <strong>Time slot:</strong>
+  <%= @availability.time_slot %>
+</p>
+
+<p>
+  <strong>Is available:</strong>
+  <%= @availability.is_available %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @availability.notes %>
+</p>
+
+<%= link_to 'Edit', edit_availability_path(@availability) %> |
+<%= link_to 'Back', availabilities_path %>

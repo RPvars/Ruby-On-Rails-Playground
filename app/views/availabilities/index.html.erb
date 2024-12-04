@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Availabilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Time slot</th>
+      <th>Is available</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @availabilities.each do |availability| %>
+      <tr>
+        <td><%= availability.user_id %></td>
+        <td><%= availability.date %></td>
+        <td><%= availability.time_slot %></td>
+        <td><%= availability.is_available %></td>
+        <td><%= availability.notes %></td>
+        <td><%= link_to 'Show', availability %></td>
+        <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
+        <td><%= link_to 'Destroy', availability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Availability', new_availability_path %>

@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_11_28_211906) do
+ActiveRecord::Schema.define(version: 2024_12_04_102947) do
+
+  create_table "availabilities", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "date"
+    t.string "time_slot"
+    t.boolean "is_available"
+    t.text "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_availabilities_on_user_id"
+  end
+
+  create_table "qualifications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title"
+    t.string "level"
+    t.date "acquired_date"
+    t.date "valid_until"
+    t.text "description"
+    t.text "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_qualifications_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -24,4 +48,6 @@ ActiveRecord::Schema.define(version: 2024_11_28_211906) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "availabilities", "users"
+  add_foreign_key "qualifications", "users"
 end
